@@ -130,20 +130,17 @@
                                 <RadioButton.IsChecked>
                                     <Binding Path="IsSelected" RelativeSource="{RelativeSource AncestorType=ListBoxItem}" Mode="TwoWay"/>
                                 </RadioButton.IsChecked>
-
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Grid.Column="0" Text="{Binding IconFont}" FontFamily="./Fonts/#iconfont" FontSize="22"  Margin="10 0 0 0" Foreground="{Binding BackColor}"/>
-                                        <TextBlock Margin="10 0 0 0" Text="{Binding Title}"  FontSize="14" VerticalAlignment="Center" 
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Grid.Column="0" Text="{Binding IconFont}" FontFamily="./Fonts/#iconfont" FontSize="22"  Margin="10 0 0 0" Foreground="{Binding BackColor}"/>
+                                    <TextBlock Margin="10 0 0 0" Text="{Binding Title}"  FontSize="14" VerticalAlignment="Center" 
                                    Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type RadioButton}}}" />
-                                    </StackPanel>
-
-                                    <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{Binding Count}"  FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                                </Grid>
+                                    
+                                    <TextBlock Margin="10 0 0 0" Grid.Column="1" Text="(" FontSize="15" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Margin="5 0 5 0" Text="{Binding Count}" 
+                                               FontSize="15" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text=")"  FontSize="15" VerticalAlignment="Center"/>
+                                    
+                                </StackPanel>
                             </RadioButton>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
